@@ -1,0 +1,24 @@
+{
+  "name": "easybook-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server.js",
+    "dev": "cross-env PORT=6666 nodemon server.js --exec babel-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.20.1",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "util": "^0.12.4"
+  }
+}
