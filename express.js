@@ -1,6 +1,7 @@
-let express = require('express')
-let bodyparse = require('body-parser')
-let util = require('util')
+const express = require('express')
+const bodyparse = require('body-parser')
+const util = require('util')
+import routers from './routers/routers'
 
 export default function (){
   let app = express()
@@ -13,22 +14,23 @@ export default function (){
     res.setHeader('Access-Control-Allow-Orgin', '*')
     res.setHeader('Access-Control-Allow-Methods', '*')
     res.setHeader('Access-Control-Allow-Headers', '*')
+    let  time = new Date();
+    req.startTime = time
     next()
   })
 
-
-  // 解析前端json格式
-  app.use(bodyparse.json())
   // 解析前端发来的表单格式
   app.use(bodyparse.urlencoded({extended: true}))
+  // 解析前端json格式
+  app.use(bodyparse.json())
+  app.use('/api',routers)
 
-
-  app.get('/', (req, res) =>{
-    console.log('in');
-    res.status(200).send('hello')
+  app.get('*', (req, res) =>{
+    console.log('404');
+    res.status(404).send({
+      code:404,
+      data:404
+    })
   })
-  // app.listen(3000, () =>{
-  //   console.log('port ok')
-  // })
   return app
 }

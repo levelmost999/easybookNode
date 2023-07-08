@@ -1,9 +1,9 @@
-// server.js
-import myexpress from './config/express'
+import myexpress from './express'
+import presetEnv from './config/config'
 
 let server = myexpress()
-let port = process.env.PORT || 7777
-console.log(process.env);
+let port = presetEnv.port
+console.log(process.env.port);
 server.listenAsync(port).then(()=>{
   console.log('启动服务')
 });

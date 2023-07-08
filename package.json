@@ -5,20 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node server.js",
-    "dev": "cross-env PORT=6666 nodemon server.js --exec babel-node"
+    "start": "cross-env PORT=4399 babel-node server.js",
+    "dev": "cross-env PORT=4399 nodemon server.js --exec babel-node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.1",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^1.0.4",
     "babel-preset-env": "^1.7.0",
-    "body-parser": "^1.20.1",
     "cross-env": "^7.0.3",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.20",
-    "util": "^0.12.4"
+    "nodemon": "^2.0.20"
   }
 }
